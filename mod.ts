@@ -8,7 +8,7 @@ export const notFound: Response = new Response("", {
 export const success = (username: string): Response =>
     new Response(username, {status: 200, headers: {"content-type": "text/plain",},});
 
-export const getRandyUsernameFetch = async (id: string, options: { env: "local" | "prod" }): Promise<string> => {
+export const getRandyUsernameFetch = async (options: { env: "local" | "prod" }): Promise<string> => {
     const url: string = getUrl(options.env).concat("/username");
     const response = await fetch(url);
     return await response.text();
