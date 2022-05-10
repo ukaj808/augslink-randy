@@ -9,7 +9,7 @@ const handle = (req: Request): Response => {
     const pathname = new URL(req.url).pathname;
     switch(req.method) {
         case "GET":
-            if (pathname === "/username") return success(generateRandomUsername());
+            if (pathname === "/api/v1/username") return success(generateRandomUsername());
             return notFound;
         default:
             return notFound;
